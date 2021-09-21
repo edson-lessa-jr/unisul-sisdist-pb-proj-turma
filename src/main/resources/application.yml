@@ -1,19 +1,12 @@
 
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:6543/sist_distrib_pb"
-    username: "postgres"
-    password: "postgres"
-  jpa:
-    database: postgresql
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL10Dialect
-
 server:
-  port: 9093
+  port: ${PORTA}
   error:
     include-message: always
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
